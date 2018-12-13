@@ -1,5 +1,5 @@
 // @flow
-import {EventType as UIEventType} from '@playkit-js/playkit-js-ui';
+// import {EventType as UIEventType} from '@playkit-js/playkit-js-ui';
 import {Provider} from 'playkit-js-providers';
 import {supportLegacyOptions} from './common/utils/setup-helpers';
 import getLogger from './common/utils/logger';
@@ -7,7 +7,7 @@ import {addKalturaParams} from './common/utils/kaltura-params';
 import {evaluatePluginsConfig} from './common/plugins/plugins-config';
 import {addKalturaPoster} from 'poster';
 import './assets/style.css';
-import {UIWrapper} from './common/ui-wrapper';
+// import {UIWrapper} from './common/ui-wrapper';
 import {PlaylistManager} from './common/playlist/playlist-manager';
 import {PlaylistEventType} from './common/playlist/playlist-event-type';
 import {CastEventType} from './common/cast/cast-event-type';
@@ -42,7 +42,7 @@ class KalturaPlayer extends FakeEventTarget {
     this._eventManager = new EventManager();
     this._localPlayer = loadPlayer(options);
     this._logger = getLogger('KalturaPlayer' + Utils.Generator.uniqueId(5));
-    this._uiWrapper = new UIWrapper(this, options);
+    // this._uiWrapper = new UIWrapper(this, options);
     this._provider = new Provider(options.provider, __VERSION__);
     this._playlistManager = new PlaylistManager(this, options);
     this._playlistManager.configure(options.playlist);
@@ -54,7 +54,7 @@ class KalturaPlayer extends FakeEventTarget {
     this._mediaInfo = mediaInfo;
     this.reset();
     this._localPlayer.loadingMedia = true;
-    this._uiWrapper.setLoadingSpinnerState(true);
+    // this._uiWrapper.setLoadingSpinnerState(true);
     return this._provider
       .getMediaConfig(mediaInfo)
       .then(mediaConfig => {
@@ -78,13 +78,13 @@ class KalturaPlayer extends FakeEventTarget {
     });
     addKalturaPoster(playerConfig.sources, mediaConfig.sources, this._localPlayer.dimensions);
     addKalturaParams(this, playerConfig);
-    this._uiWrapper.setSeekbarConfig(mediaConfig, this._localPlayer.config.ui);
+    // this._uiWrapper.setSeekbarConfig(mediaConfig, this._localPlayer.config.ui);
     this.configure(playerConfig);
   }
 
   loadPlaylist(playlistInfo: ProviderPlaylistInfoObject, playlistCustomConfig: KPPlaylistConfigObject): Promise<*> {
     this._logger.debug('loadPlaylist', playlistInfo);
-    this._uiWrapper.setLoadingSpinnerState(true);
+    // this._uiWrapper.setLoadingSpinnerState(true);
     return this._provider
       .getPlaylistConfig(playlistInfo)
       .then(playlistConfig => this._mergePlaylistConfigAndSet(playlistConfig, playlistCustomConfig))
@@ -97,7 +97,7 @@ class KalturaPlayer extends FakeEventTarget {
 
   loadPlaylistByEntryList(entryList: ProviderEntryListObject, playlistCustomConfig: KPPlaylistConfigObject): Promise<*> {
     this._logger.debug('loadPlaylistByEntryList', entryList);
-    this._uiWrapper.setLoadingSpinnerState(true);
+    // this._uiWrapper.setLoadingSpinnerState(true);
     return this._provider
       .getEntryListConfig(entryList)
       .then(playlistConfig => this._mergePlaylistConfigAndSet(playlistConfig, playlistCustomConfig))
@@ -158,7 +158,7 @@ class KalturaPlayer extends FakeEventTarget {
 
   reset(): void {
     this._localPlayer.reset();
-    this._uiWrapper.reset();
+    // this._uiWrapper.reset();
   }
 
   destroy(): void {
@@ -417,7 +417,7 @@ class KalturaPlayer extends FakeEventTarget {
       Cast: CastEventType,
       Core: CoreEventType,
       Playlist: PlaylistEventType,
-      UI: UIEventType,
+      UI: {},
       // For backward compatibility
       ...CoreEventType
     };

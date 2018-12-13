@@ -2,7 +2,7 @@
 import {BaseRemotePlayer} from './base-remote-player';
 import {RemoteSession} from './remote-session';
 import {PlayerSnapshot} from './player-snapshot';
-import {RemotePlayerUI} from './remote-player-ui';
+// import {RemotePlayerUI} from './remote-player-ui';
 
 /**
  * @class RemotePayload

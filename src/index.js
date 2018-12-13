@@ -5,22 +5,22 @@ import getLogger, {getLogLevel, LogLevel, setLogLevel} from './common/utils/logg
 // Import core
 import * as core from '@playkit-js/playkit-js';
 // Import ui
-import * as ui from '@playkit-js/playkit-js-ui';
+// import * as ui from '@playkit-js/playkit-js-ui';
 // Import provider
 import * as providers from 'playkit-js-providers';
 // Import media source adapters
 import '@playkit-js/playkit-js-hls';
-import '@playkit-js/playkit-js-dash';
+// import '@playkit-js/playkit-js-dash';
 // Import analytics plugin
 import 'playkit-js-analytics';
 import '@playkit-js/playkit-js-kava';
 // Import shaka-player
-import * as shaka from 'shaka-player';
+// import * as shaka from 'shaka-player';
 // Import setup method
 import {setup} from './setup';
 import {getPlayers, getPlayer} from './proxy';
 // Import cast framework
-import {cast} from './common/cast';
+// import {cast} from './common/cast';
 // Import playlist
 import {playlist} from './common/playlist';
 
@@ -41,11 +41,11 @@ export {
   getPlayers,
   getPlayer,
   core,
-  ui,
+  // ui,
   providers,
   setup,
-  shaka,
-  cast,
+  // shaka,
+  // cast,
   playlist,
   __PLAYER_TYPE__ as PLAYER_TYPE,
   __VERSION__ as VERSION,

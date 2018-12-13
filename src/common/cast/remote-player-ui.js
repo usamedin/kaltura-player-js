@@ -1,6 +1,6 @@
 // @flow
-import {Presets} from '@playkit-js/playkit-js-ui';
-
+// import {Presets} from '@playkit-js/playkit-js-ui';
+const Presets = {};
 /**
  * @class RemotePlayerUI
  */

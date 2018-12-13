@@ -5,7 +5,7 @@ import {PlayerSnapshot} from './player-snapshot';
 import {CastEventType} from './cast-event-type';
 import {EventType as CoreEventType, FakeEvent, loadPlayer, TrackType, Utils} from '@playkit-js/playkit-js';
 import {RemoteAvailablePayload, RemoteConnectedPayload, RemoteDisconnectedPayload} from './remote-payload';
-import {UIWrapper} from '../ui-wrapper';
+// import {UIWrapper} from '../ui-wrapper';
 import getLogger from '../utils/logger';
 
 const logger: any = getLogger('RemoteControl');
