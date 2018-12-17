@@ -1,7 +1,7 @@
 // @flow
 import PolyfillManager from './common/polyfills/polyfill-manager';
 import './common/polyfills/all';
-import getLogger, {getLogLevel, LogLevel, setLogLevel} from './common/utils/logger';
+import {getLogLevel, LogLevel, setLogLevel} from './common/utils/logger';
 // Import core
 import * as core from '@playkit-js/playkit-js';
 // Import ui
@@ -24,15 +24,14 @@ import {getPlayers, getPlayer} from './proxy';
 // Import playlist
 import {playlist} from './common/playlist';
 
-declare var __VERSION__: string;
+// declare var __VERSION__: string;
 declare var __NAME__: string;
-declare var __PACKAGE_URL__: string;
 declare var __PLAYER_TYPE__: string;
 
 const currentLogLevel = getLogLevel();
 setLogLevel(LogLevel.INFO);
-getLogger().log(`%c ${__NAME__} ${__VERSION__}`, 'color: #ff98f9;  font-size: large');
-getLogger().log(`%c For more details see ${__PACKAGE_URL__}`, 'color: #ff98f9;');
+// getLogger().log(`%c ${__NAME__} ${__VERSION__}`, 'color: #ff98f9;  font-size: large');
+// getLogger().log(`%c For more details see ${__PACKAGE_URL__}`, 'color: #ff98f9;');
 setLogLevel(currentLogLevel);
 
 PolyfillManager.installAll();
