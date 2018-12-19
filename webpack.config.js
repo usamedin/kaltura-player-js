@@ -13,7 +13,6 @@ module.exports = {
     umdNamedDefine: true,
     devtoolModuleFilenameTemplate: './kaltura-player/[resource-path]'
   },
-  devtool: 'source-map',
   module: {
     rules: [
       {
